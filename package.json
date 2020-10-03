@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-express-integration-test",
+  "version": "1.0.0",
+  "description": "A simple project which shows a simple express app and how we can test it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pshaddel/NodeJS-Express-Integration-Test.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Poorshad Shaddel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pshaddel/NodeJS-Express-Integration-Test/issues"
+  },
+  "homepage": "https://github.com/pshaddel/NodeJS-Express-Integration-Test#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.4.2",
+    "mongodb": "^3.6.2",
+    "supertest": "^5.0.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^6.9.0"
+  }
+}
