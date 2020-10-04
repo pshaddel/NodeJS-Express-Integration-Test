@@ -31,7 +31,6 @@ module.exports = async () => {
         if (!URL) {
             const uri = await getTestDataBaseURL();
             URL = uri;
-            console.log(uri);
             return getDB(uri);
         }
         else {
