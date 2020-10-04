@@ -8,6 +8,7 @@ beforeAll(() => {
 describe("Get Users", () => {
     it('get users should be an empty array', async () => {
         const res = await request(app).get('/users');
+        expect(res.body).toHaveProperty('users');
         expect(res.body.users).toEqual([]);
         expect(res.status).toBe(200);
     });
