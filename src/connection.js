@@ -1,19 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
-// Connection URL
-const url = 'mongodb://localhost:27017';
-
-// Database Name
-const dbName = 'myproject';
-
-// Use connect method to connect to the server
-module.exports = () => {
+const getDB = (url) => {
     return new Promise((resolve, reject) => {
         try {
             MongoClient.connect(url, function (err, client) {
                 console.log("Connected successfully to server");
-                const db = client.db(dbName);
+                const db = client.db('myproject');
                 resolve(db);
             });
         } catch (error) {
@@ -22,9 +15,30 @@ module.exports = () => {
     })
 }
 
-const mongod = new MongoMemoryServer({
-    instance: {
-        port: 27020, // by default choose any free port
-        dbName: 'myproject', // by default generate random dbName
+const getTestDataBaseURL = async () => {
+    const mongod = new MongoMemoryServer({
+        instance: {
+            dbName: 'myproject'
+        }
+    });
+    return mongod.getUri();
+}
+
+let URL = null;
+module.exports = async () => {
+    const DBurl = 'mongodb://localhost:27017';
+    console.log(process.NODE_ENV)
+    if (process.NODE_ENV === 'test') {
+        if (!URL) {
+            const uri = await getTestDataBaseURL();
+            URL = uri;
+            console.log(uri);
+            return getDB(uri);
+        }
+        else {
+            return getDB(URL)
+        }
+    } else {
+        return getDB(DBurl)
     }
-});
+}

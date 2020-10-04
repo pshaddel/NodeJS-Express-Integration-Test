@@ -4,7 +4,7 @@
   "description": "A simple project which shows a simple express app and how we can test it.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --force-exit"
   },
   "repository": {
     "type": "git",

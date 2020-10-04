@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.get('/users', async (req, res) => {
     const db = await getDB();
     const users = await db.collection('users').find().toArray();
-    res.json(users)
+    res.json({ users })
 });
 
 app.post('/users', async (req, res) => {
@@ -25,4 +25,6 @@ app.post('/users', async (req, res) => {
 
 app.listen(3000, () => {
     console.info("app is listening on port 3000");
-})
+});
+
+module.exports = { app }
