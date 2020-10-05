@@ -1,10 +1,6 @@
 const { app } = require('./app');
 const request = require('supertest');
 
-beforeAll(() => {
-    process.NODE_ENV = 'test';
-});
-
 describe("Get Users", () => {
     it('get users should be an empty array', async () => {
         const res = await request(app).get('/users');

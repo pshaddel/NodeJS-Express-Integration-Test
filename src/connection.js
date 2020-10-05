@@ -27,7 +27,7 @@ const getTestDataBaseURL = async () => {
 let URL = null;
 module.exports = async () => {
     const DBurl = 'mongodb://localhost:27017';
-    if (process.NODE_ENV === 'test') {
+    if (process.env.NODE_ENV === 'test') {
         if (!URL) {
             const uri = await getTestDataBaseURL();
             URL = uri;
