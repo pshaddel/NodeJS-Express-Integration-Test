@@ -22,7 +22,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jest": "^26.4.2",
-    "mongodb": "^3.6.2",
+    "mongodb": "^3.6.5",
     "supertest": "^5.0.0"
   },
   "devDependencies": {
