@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/pshaddel/NodeJS-Express-Integration-Test#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jest": "^26.6.3",
     "mongodb": "^3.6.6",
     "npm-check-updates": "^11.4.1",
